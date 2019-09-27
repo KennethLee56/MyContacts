@@ -12,10 +12,17 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
     Intent intent;
+
+    DBHandler dbHandler;
+
+    ContactLists contactListsAdapter;
+
+    ListView contactListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        dbHandler = new DBHandler(this, null);
+
+        contactListView = (ListView) findViewById(R.id.contactListView);
+
+        contactListsAdapter = new ContactLists(this, dbHandler.getContactLists(),0);
+
+        contactListView.setAdapter(contactListsAdapter);
     }
 
     @Override

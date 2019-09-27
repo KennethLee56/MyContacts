@@ -23,6 +23,8 @@ public class AddContact extends AppCompatActivity {
     EditText emailEditText;
     EditText phoneEditText;
 
+    DBHandler dbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class AddContact extends AppCompatActivity {
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         phoneEditText = (EditText) findViewById(R.id.phoneEditText);
 
+        dbHandler = new DBHandler(this, null);
     }
 
     @Override
@@ -70,6 +73,7 @@ public class AddContact extends AppCompatActivity {
             Toast.makeText(this, "Please enter a name, email, and phone number!", Toast.LENGTH_LONG).show();
         }
         else{
+            dbHandler.addContactList(name, email, phone);
             Toast.makeText(this, "Contact Added!", Toast.LENGTH_LONG).show();
         }
     }
