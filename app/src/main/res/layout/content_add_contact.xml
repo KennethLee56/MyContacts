@@ -59,7 +59,7 @@
             android:layout_height="match_parent" >
 
             <TextView
-                android:id="@+id/phoneTextView"
+                android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/phone" />
@@ -72,5 +72,25 @@
                 android:inputType="phone" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/typeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type" />
+
+            <Spinner
+                android:id="@+id/typeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/types"
+                android:paddingTop="8dp"/>
+
+        </TableRow>
+
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

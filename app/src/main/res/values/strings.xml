@@ -8,4 +8,11 @@
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="add">ADD</string>
+    <string-array name="types">
+        <item></item>
+        <item>Family</item>
+        <item>Friend</item>
+        <item>Work</item>
+        <item>School</item>
+    </string-array>>
 </resources>
